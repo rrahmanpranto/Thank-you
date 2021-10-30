@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="text-container">
+        <div id="sir">
+            <img src="1.jpg" alt="">
+        </div>
+        <div class="animated-text">
+            <h2>ধন্যবাদ স্যার!</h2>
+            <h2>Thank you sir!</h2>
+            <h2>Gracias!</h2>
+            <h2>Teşekkürler!</h2>
+            <h2>Danke!</h2>
+            <h2>Merci!</h2>
+        </div>
+    </div>
+    <div class="animation-container">
+        <div class="burst">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        function creatBurst() {
+            let animContainer = document.querySelector('.animation-container');
+
+            let burst = document.querySelector('.burst');
+
+            burst.style.top = Math.random() * 550 + 'px';
+            burst.style.left = Math.random() * 750 + 'px';
+
+            let burstClone = burst.cloneNode(true);
+            animContainer .appendChild(burstClone);
+
+            setTimeout(() => {
+				burstClone.remove();
+			}, 20000);
+		}
+        
+        setInterval(creatBurst, 2000);
+    </script>
+</body>
+
+</html>
